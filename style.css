@@ -19,7 +19,7 @@ body {
 /* img style start  */
 .img-wrap {
   width: 50%;
-  height: 600px;
+  height: 640px;
 }
 #main-img {
   width: 100%;
@@ -28,6 +28,9 @@ body {
 /* img style end */
 
 /* input part style start */
+.count-section {
+  background-color: #ddd;
+}
 .input-title {
   font-size: 2rem;
 }
