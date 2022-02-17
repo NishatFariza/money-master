@@ -12,6 +12,33 @@ const clothInput =document.getElementById('cloth-input');
 
 const balanceText =document.getElementById('balance-amount')
 
+
+//common function
+function incomeErrorHandle(){
+    /*  error handle start */
+    if(incomeInput.value > 0 ||isNaN(incomeInput.value) ){
+    //    console.log('Your account does not have this sufficient balance');
+     alert('Please Enter only positive number');
+     return false;
+    }
+    else if (foodInput.value >0 || isNaN(foodInput.value)){
+        alert('Please Enter only positive number');
+        return false;
+    }
+    else if (rentInput.value >0 || isNaN(rentInput.value)){
+        alert('Please Enter only positive number');
+        return false;
+    }
+    else if (clothInput.value >0 || isNaN(clothInput.value)){
+        alert('Please Enter only positive number');
+        return false;
+    }
+    return true;
+  /*  error handle end */
+}
+
+
+
 // calculate function
 function getCalculate(){
     const incomeInputNumber =parseInt(incomeInput.value);
@@ -19,11 +46,7 @@ function getCalculate(){
     const rentInputNumber =parseInt(rentInput.value);
     const clothInputNumber =parseInt(clothInput.value);
 
-  /*  error handle start */
-    if(expensesAmount > incomeInputNumber){
-       console.log('Your account does not have this sufficient balance');
-    }
-  /*  error handle end */
+  
    let expensesAmount = foodInputNumber +rentInputNumber + clothInputNumber;
    document.getElementById('total-expenses').innerText= expensesAmount;
 
@@ -33,7 +56,11 @@ function getCalculate(){
 
 
 document.getElementById('calc-button').addEventListener('click', function(){
-  getCalculate();
+ 
+  const check =  incomeErrorHandle();
+  if(check == true){
+    getCalculate();
+  }
 })
 
  //saving event 
@@ -59,3 +86,5 @@ document.getElementById('calc-button').addEventListener('click', function(){
     document.getElementById('remaining-amount').innerText =remainingBalance;
 
  }
+
+ //
