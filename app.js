@@ -84,7 +84,8 @@ function getCalculate(){
  function savingErrorHandle(){
     const incomeInputNumber =parseInt(incomeInput.value);
  }
-
+ 
+ //emty valu function
  function removeValue(){
     foodInput.value="";
     rentInput.value="";

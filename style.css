@@ -17,6 +17,7 @@ body {
   background-color: rgba(21, 171, 186, 0.8);
 }
 
+/* media query style  */
 @media (max-width: 550px) {
   .hero-title {
     font-size: 2rem;
