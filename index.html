@@ -30,26 +30,26 @@
     </header>
     <main class="container count-section mb-4 rounded-2 mt-4">
       <div class="row gx-4">
-        <div class="col-6 img-wrap">
+        <div class="col-md-12 col-lg-6">
           <img
             id="main-img"
-            class="rounded"
-            src="images/money-count.jpg"
+            class="rounded w-100"
+            src="images/money.jpg"
             alt=""
           />
         </div>
-        <div class="col-6">
+        <div class="col-md-12 col-lg-6">
           <div
             class="pb-4 px-2 d-flex justify-content-center align-items-center"
           >
             <div class="input-wrap">
               <h2 class="fs-2 fw-bold text-center input-title">Income</h2>
               <div
-                class="d-flex justify-content-between align-items-center mt-3 mb-5"
+                class="d-flex justify-content-center align-items-center mt-3 mb-5"
               >
                 <h5 class="fs-5 me-2 fw-light text-muted">Income:</h5>
                 <input
-                  class="form-control input-field"
+                  class="form-control input-field w-50"
                   type="text"
                   name=""
                   id="income-input"
@@ -61,11 +61,11 @@
                   Expenses
                 </h3>
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-center align-items-center mb-3"
                 >
                   <h5 class="fs-5 me-4 fw-light text-muted">Food:</h5>
                   <input
-                    class="form-control input-field"
+                    class="form-control input-field w-50"
                     type="text"
                     name=""
                     id="food-input"
@@ -73,11 +73,11 @@
                   />
                 </div>
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-center align-items-center mb-3"
                 >
-                  <h5 class="fs-5 me-3 fw-light text-muted">Rent:</h5>
+                  <h5 class="fs-5 me-4 fw-light text-muted">Rent:</h5>
                   <input
-                    class="form-control input-field"
+                    class="form-control input-field w-50"
                     type="text"
                     name=""
                     id="rent-input"
@@ -85,11 +85,11 @@
                   />
                 </div>
                 <div
-                  class="d-flex justify-content-between align-items-center mb-3"
+                  class="d-flex justify-content-center align-items-center mb-3"
                 >
-                  <h5 class="fs-5 me-3 fw-light text-muted">Cloths:</h5>
+                  <h5 class="fs-5 me-3 fw-light text-muted">Cloth:</h5>
                   <input
-                    class="form-control input-field"
+                    class="form-control input-field w-50"
                     type="text"
                     name=""
                     id="cloth-input"
@@ -115,39 +115,34 @@
                 </h3>
               </div>
 
-              <div class="row mx-auto mt-4">
-                <div
-                  class="col-7 d-flex justify-content-center align-items-center"
+              <div
+                class="d-flex justify-content-center align-items-center mx-auto mt-4"
+              >
+                <h5 class="fs-5 fw-light text-muted">Save:</h5>
+                <input
+                  class="form-control w-25 mx-2"
+                  type="text"
+                  name=""
+                  id="save-input"
+                  placeholder="0"
+                />
+
+                <span class="fs-4 fw-bold text-muted mx-3">%</span>
+                <button
+                  id="save-button"
+                  type="button"
+                  class="btn btn-secondary calc-btn border-0 px-5 py-2"
                 >
-                  <h5 class="fs-5 me-3 fw-light text-muted">Save:</h5>
-                  <input
-                    class="form-control"
-                    type="text"
-                    name=""
-                    id="save-input"
-                    placeholder="0"
-                  />
-                </div>
-                <div class="col-2 text-center">
-                  <span class="fs-4 fw-bold text-muted">%</span>
-                </div>
-                <div class="col-3 mx-0">
-                  <button
-                    id="save-button"
-                    type="button"
-                    class="btn btn-secondary calc-btn border-0 px-5 py-2"
-                  >
-                    Save
-                  </button>
-                </div>
-                <div class="text-center mt-4">
-                  <h3 class="fw-bold fs-5 mb-2">
-                    Saving Amount: <span id="save-amount">00</span>
-                  </h3>
-                  <h3 class="fw-bold fs-5">
-                    Remaining Balance: <span id="remaining-amount">00</span>
-                  </h3>
-                </div>
+                  Save
+                </button>
+              </div>
+              <div class="text-center mt-4">
+                <h3 class="fw-bold fs-5 mb-2">
+                  Saving Amount: <span id="save-amount">00</span>
+                </h3>
+                <h3 class="fw-bold fs-5">
+                  Remaining Balance: <span id="remaining-amount">00</span>
+                </h3>
               </div>
             </div>
           </div>

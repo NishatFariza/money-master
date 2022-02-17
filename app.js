@@ -1,42 +1,8 @@
-//  income input seclect 
 const incomeInput =document.getElementById('income-input');
-
-// food input seclect 
 const foodInput =document.getElementById('food-input');
-
-// rent input seclect
 const rentInput =document.getElementById('rent-input');
-
-// cloths input seclect
 const clothInput =document.getElementById('cloth-input');
-
 const balanceText =document.getElementById('balance-amount')
-
-
-//common function
-function incomeErrorHandle(){
-    /*  error handle start */
-    if(incomeInput.value > 0 ||isNaN(incomeInput.value) ){
-    //    console.log('Your account does not have this sufficient balance');
-     alert('Please Enter only positive number');
-     return false;
-    }
-    else if (foodInput.value >0 || isNaN(foodInput.value)){
-        alert('Please Enter only positive number');
-        return false;
-    }
-    else if (rentInput.value >0 || isNaN(rentInput.value)){
-        alert('Please Enter only positive number');
-        return false;
-    }
-    else if (clothInput.value >0 || isNaN(clothInput.value)){
-        alert('Please Enter only positive number');
-        return false;
-    }
-    return true;
-  /*  error handle end */
-}
-
 
 
 // calculate function
@@ -46,30 +12,33 @@ function getCalculate(){
     const rentInputNumber =parseInt(rentInput.value);
     const clothInputNumber =parseInt(clothInput.value);
 
-  
-   let expensesAmount = foodInputNumber +rentInputNumber + clothInputNumber;
-   document.getElementById('total-expenses').innerText= expensesAmount;
+    let expensesAmount = foodInputNumber +rentInputNumber + clothInputNumber;
 
-   let balanceAmount = incomeInputNumber - expensesAmount;
-   balanceText.innerText= balanceAmount;
-}
+   if(isNaN(incomeInput.value) == false && isNaN(foodInput.value) == false && isNaN(rentInput.value) == false && isNaN(clothInput.value) == false ){
+       if(foodInput.value >=0 && rentInput.value >=0 && clothInput.value>=0 ){
+        if(expensesAmount < incomeInputNumber ){
+           
+        document.getElementById('total-expenses').innerText= expensesAmount;
+     
+        let balanceAmount = incomeInputNumber - expensesAmount;
+        balanceText.innerText= balanceAmount;
+        }
+        else{
+            alert('Your expenses more then total income');
+            removeValue()
+        }
+       }
+       else{
+           alert('Wrong input! Please enter positive value');
+           removeValue()
+       }
+   }
+   else{
+       alert('Wrong input! Please enter number');
+       removeValue();
+   }  
 
-
-document.getElementById('calc-button').addEventListener('click', function(){
- 
-  const check =  incomeErrorHandle();
-  if(check == true){
-    getCalculate();
-  }
-})
-
- //saving event 
- document.getElementById('save-button').addEventListener('click', function(){
-     getSavingAmount();
-  
- });
-
-
+};
 
 //  save function 
  function getSavingAmount(){
@@ -77,14 +46,63 @@ document.getElementById('calc-button').addEventListener('click', function(){
     const saveInputNumber =parseInt(saveInput.value);
     // console.log(saveInputNumber)
   const incomeInputNumber =parseInt(incomeInput.value);
-
   const savingPercentage = (saveInputNumber/100) * incomeInputNumber ;
-  const savingAmount =document.getElementById('save-amount');
-  savingAmount.innerText =savingPercentage;
-   
-  const remainingBalance = parseInt(balanceText.innerText) - savingPercentage;
-    document.getElementById('remaining-amount').innerText =remainingBalance;
 
+  if(isNaN(saveInput.value) ==false){
+    if(saveInputNumber >=0 ){
+        if(savingPercentage < parseInt(balanceText.innerText) ){
+            const savingAmount =document.getElementById('save-amount');
+        savingAmount.innerText =savingPercentage;
+     
+      const remainingBalance = parseInt(balanceText.innerText) - savingPercentage;
+      document.getElementById('remaining-amount').innerText =remainingBalance;
+      incomeInput.value='';
+      saveInput.value='';
+        }
+        else{
+            alert('Your saving amount more then your available balance');
+            incomeInput.value='';
+         saveInput.value='';
+        }
+
+    }
+    else{
+        alert('Please! Enter positive value');
+        incomeInput.value='';
+       saveInput.value='';
+    }
+      
+  }
+  else{
+      alert('Wrong input! Please Enter number');
+      incomeInput.value='';
+      saveInput.value='';
+  }
+  
+    // saveInput.value="";
  }
 
- //
+ function savingErrorHandle(){
+    const incomeInputNumber =parseInt(incomeInput.value);
+ }
+
+ 
+
+ function removeValue(){
+    foodInput.value="";
+    rentInput.value="";
+    clothInput.value="";
+}
+
+ // income event 
+document.getElementById('calc-button').addEventListener('click', function(){
+        getCalculate();
+        removeValue()
+    });
+    
+ //saving event 
+document.getElementById('save-button').addEventListener('click', function(){
+   getSavingAmount();
+        
+      
+});
