@@ -28,7 +28,7 @@
         <i class="fa-solid fa-circle-dollar-to-slot ms-4 hero-icon"></i>
       </div>
     </header>
-    <main class="container py-4 count-section mb-4 rounded-2">
+    <main class="container count-section mb-4 rounded-2 mt-4">
       <div class="row gx-4">
         <div class="col-6 img-wrap">
           <img
@@ -52,7 +52,7 @@
                   class="form-control"
                   type="text"
                   name=""
-                  id=""
+                  id="income-input"
                   placeholder="0"
                 />
               </div>
@@ -68,7 +68,7 @@
                     class="form-control"
                     type="text"
                     name=""
-                    id=""
+                    id="food-input"
                     placeholder="0"
                   />
                 </div>
@@ -80,7 +80,7 @@
                     class="form-control ms-2"
                     type="text"
                     name=""
-                    id=""
+                    id="rent-input"
                     placeholder="0"
                   />
                 </div>
@@ -92,13 +92,14 @@
                     class="form-control"
                     type="text"
                     name=""
-                    id=""
+                    id="cloth-input"
                     placeholder="0"
                   />
                 </div>
               </div>
               <div class="text-center mt-3 mb-4">
                 <button
+                  id="calc-button"
                   type="button"
                   class="btn btn-secondary calc-btn border-0 px-5 py-2"
                 >
@@ -106,8 +107,12 @@
                 </button>
               </div>
               <div class="text-center">
-                <h3 class="fw-bold fs-5 mb-2">Total Expenses: 5500</h3>
-                <h3 class="fw-bold fs-5">Balence: 4500</h3>
+                <h3 class="fw-bold fs-5 mb-2">
+                  Total Expenses: <span id="total-expenses">00</span>
+                </h3>
+                <h3 class="fw-bold fs-5">
+                  Balence: <span id="balance-amount">00</span>
+                </h3>
               </div>
 
               <div class="row w-75 mx-auto mt-4">
@@ -119,7 +124,7 @@
                     class="form-control"
                     type="text"
                     name=""
-                    id=""
+                    id="save-input"
                     placeholder="0"
                   />
                 </div>
@@ -128,6 +133,7 @@
                 </div>
                 <div class="col-3 mx-0">
                   <button
+                    id="save-button"
                     type="button"
                     class="btn btn-secondary calc-btn border-0 px-5 py-2"
                   >
@@ -135,8 +141,12 @@
                   </button>
                 </div>
                 <div class="text-center mt-4">
-                  <h3 class="fw-bold fs-5 mb-2">Saving Amount: 00</h3>
-                  <h3 class="fw-bold fs-5">Remaining Balance: 00</h3>
+                  <h3 class="fw-bold fs-5 mb-2">
+                    Saving Amount: <span id="save-amount">00</span>
+                  </h3>
+                  <h3 class="fw-bold fs-5">
+                    Remaining Balance: <span id="remaining-amount">00</span>
+                  </h3>
                 </div>
               </div>
             </div>

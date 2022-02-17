@@ -29,6 +29,7 @@ body {
 
 /* input part style start */
 .count-section {
+  padding: 4rem 2rem;
   background-color: #ddd;
 }
 .input-title {
