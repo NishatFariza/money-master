@@ -79,14 +79,11 @@ function getCalculate(){
       saveInput.value='';
   }
   
-    // saveInput.value="";
  }
 
  function savingErrorHandle(){
     const incomeInputNumber =parseInt(incomeInput.value);
  }
-
- 
 
  function removeValue(){
     foodInput.value="";
